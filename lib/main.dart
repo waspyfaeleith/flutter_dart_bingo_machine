@@ -119,16 +119,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$calledNumber',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            FlatButton(
+              child: Text('Get Number', style: Theme.of(context).textTheme.headline2,),
+              onPressed: () {
+                _getNextNumber();
+              }
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _getNextNumber,
-        tooltip: 'Get Next Number',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
