@@ -55,8 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
   int calledNumber = 0;
 
   void _reset() {
-    numbers = new List<int>.generate(90, (i) => i + 1);
-    calledNumbers = List.filled(90, 0);
+    setState(() {
+      numbers = new List<int>.generate(90, (i) => i + 1);
+      calledNumbers = List.filled(90, 0);
+      calledNumber = 0;
+    });
+
   }
 
   void _incrementCounter() {
@@ -118,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$calledNumbers',
             ),
             Text(
-              '$calledNumber',
+              calledNumber == 0  ? 'Eyes Down...' : '$calledNumber',
               style: Theme.of(context).textTheme.headline1,
             ),
             FlatButton(
@@ -126,6 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 _getNextNumber();
               }
+            ),
+            FlatButton(
+                child: Text('New Game', style: Theme.of(context).textTheme.headline2,),
+                onPressed: () {
+                  _reset();
+                }
             ),
           ],
         ),
