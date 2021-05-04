@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:my_fun_app/models/game_data.dart';
+import 'package:provider/provider.dart';
 
-import 'components/rounded_button.dart';
+import '../components/rounded_button.dart';
 
 class CheckScreen extends StatelessWidget {
 
-  final List<int> calledNumbers;
-  final Function resetGameCallback;
+  static String id = 'check_screen';
+  //final List<int> calledNumbers;
+  //final Function resetGameCallback;
 
-  CheckScreen({this.calledNumbers, this.resetGameCallback});
+  //CheckScreen({this.calledNumbers, this.resetGameCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,7 @@ class CheckScreen extends StatelessWidget {
                   shrinkWrap: true,
                   children: List.generate(90, (index) {
                     int number = index + 1;
+                    List<int> calledNumbers = Provider.of<GameData>(context).calledNumbers;
                     if (calledNumbers.contains(number)) {
                       return Text(
                           '$number',
@@ -54,7 +58,7 @@ class CheckScreen extends StatelessWidget {
                 title: 'New Game',
                 color: Colors.lightBlueAccent,
                 onPressed: () {
-                  resetGameCallback();
+                  Provider.of<GameData>(context, listen: false).reset();
                   Navigator.pop(context);
                 },
               ),
