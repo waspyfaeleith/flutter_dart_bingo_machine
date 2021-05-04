@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'components/rounded_button.dart';
+
 class CheckScreen extends StatelessWidget {
 
-  List<int> calledNumbers;
+  final List<int> calledNumbers;
 
   CheckScreen({this.calledNumbers});
 
@@ -12,29 +14,41 @@ class CheckScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Checking Numbers'),
         ),
-        body: Center(
+        body: SafeArea(
           child: Column(
             children: [
-              Text(
-              '$calledNumbers',
+              SizedBox(
+                //height: 400.0,
+                child: GridView.count(
+                  crossAxisCount: 10,
+                  crossAxisSpacing: 1.0,
+                  mainAxisSpacing: 1.0,
+                  childAspectRatio: 3,
+                  padding: EdgeInsets.all(3),
+                  shrinkWrap: true,
+                  children: List.generate(90, (index) {
+                    int number = index + 1;
+                    if (calledNumbers.contains(number)) {
+                      return Text(
+                          '$number',
+                        style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)
+                      );
+                    } else {
+                    return Text(
+                        '$number',
+                        style: TextStyle(color: Colors.black87)
+                    );
+                    }
+                  },),
+                ),
               ),
-              // GridView.count(
-              //   crossAxisCount: 10,
-              //   children: List.generate(20, (index) {
-              //     return Center(
-              //       child: Text(
-              //         '${index + 1}',
-              //         //style: Theme.of(context).textTheme.headline5,
-              //       ),
-              //     );
-              //   }),
-              // ),
-          FlatButton(
-            child: Text('Return to game'),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+              RoundedButton(
+                title: 'Return to game',
+                color: Colors.lightBlueAccent,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
         ],
       ),
     ),

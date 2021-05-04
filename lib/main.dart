@@ -3,6 +3,8 @@ import 'dart:math';
 
 import 'package:my_fun_app/check_screen.dart';
 
+import 'components/rounded_button.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -31,7 +33,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   var numbers = new List<int>.generate(90, (i) => i + 1);
 
@@ -43,14 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
       numbers = new List<int>.generate(90, (i) => i + 1);
       calledNumbers = List.filled(90, 0);
       calledNumber = 0;
-    });
-
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-
     });
   }
 
@@ -74,27 +67,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Text(
-            //   '$calledNumbers',
-            // ),
             Text(
               calledNumber == 0  ? 'Eyes Down...' : '$calledNumber',
               style: Theme.of(context).textTheme.headline1,
             ),
-            FlatButton(
-              child: Text('Get Number', style: Theme.of(context).textTheme.headline2,),
+            RoundedButton(
+              title: 'Get Number',
+              color: Colors.lightGreen,
               onPressed: () {
                 _getNextNumber();
               }
             ),
-            FlatButton(
-                //child: Text('New Game', style: Theme.of(context).textTheme.headline2,),
-                //onPressed: () {
-                //  _reset();
-                //}
-              child: Text('House Called!',
-                style: Theme.of(context).textTheme.headline2,
-              ),
+            RoundedButton(
+              title: 'House Called',
+              color: Colors.lightBlueAccent,
               onPressed: () {
                 Navigator.push(
                   context,
