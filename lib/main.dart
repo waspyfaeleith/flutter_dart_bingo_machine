@@ -86,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(builder: (context) => CheckScreen(
                     calledNumbers: calledNumbers,
+                    resetGameCallback: _reset,
                   )),
                 );
               },

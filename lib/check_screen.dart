@@ -5,8 +5,9 @@ import 'components/rounded_button.dart';
 class CheckScreen extends StatelessWidget {
 
   final List<int> calledNumbers;
+  final Function resetGameCallback;
 
-  CheckScreen({this.calledNumbers});
+  CheckScreen({this.calledNumbers, this.resetGameCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,14 @@ class CheckScreen extends StatelessWidget {
                 title: 'Return to game',
                 color: Colors.lightBlueAccent,
                 onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              RoundedButton(
+                title: 'New Game',
+                color: Colors.lightBlueAccent,
+                onPressed: () {
+                  resetGameCallback();
                   Navigator.pop(context);
                 },
               ),
