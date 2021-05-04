@@ -22,12 +22,6 @@ class BingoMachine extends StatelessWidget {
           CheckScreen.id: (context) => CheckScreen(),
       }),
     );
-    //   title: 'Simple Bingo Machine',
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.blue,
-    //   ),
-    //   home: GameScreen(title: 'My Simple Bingo Machine'),
-    // );
   }
 }
 

@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_fun_app/components/rounded_button.dart';
 import 'package:my_fun_app/models/game_data.dart';
 import 'package:provider/provider.dart';
-
-import '../components/rounded_button.dart';
 
 class CheckScreen extends StatelessWidget {
 
   static String id = 'check_screen';
-  //final List<int> calledNumbers;
-  //final Function resetGameCallback;
-
-  //CheckScreen({this.calledNumbers, this.resetGameCallback});
 
   @override
   Widget build(BuildContext context) {

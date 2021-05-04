@@ -8,39 +8,7 @@ import 'package:provider/provider.dart';
 
 class GameScreen extends StatelessWidget {
 
-  //GameScreen({this.title});
-
   static String id = 'game_screen';
-  //final String title;
-
-
-//   @override
-//   _GameScreenState createState() => _GameScreenState();
-// }
-//
-// class _GameScreenState extends State<GameScreen> {
-
-  // var numbers = new List<int>.generate(90, (i) => i + 1);
-  //
-  // var calledNumbers = List.filled(90, 0);
-  // int calledNumber = 0;
-  //
-  // void _reset() {
-  //   setState(() {
-  //     numbers = new List<int>.generate(90, (i) => i + 1);
-  //     calledNumbers = List.filled(90, 0);
-  //     calledNumber = 0;
-  //   });
-  // }
-  //
-  // void _getNextNumber() {
-  //   setState(() {
-  //     var rand = new Random();
-  //     int index = rand.nextInt(numbers.length);
-  //     calledNumber = numbers.removeAt(index);
-  //     calledNumbers[calledNumber - 1] = calledNumber;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -69,13 +37,6 @@ class GameScreen extends StatelessWidget {
               color: Colors.lightBlueAccent,
               onPressed: () {
                 Navigator.pushNamed(context, CheckScreen.id);
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => CheckScreen(
-                //     calledNumbers: calledNumbers,
-                //     resetGameCallback: _reset,
-                //   )),
-                // );
               },
             ),
           ],
