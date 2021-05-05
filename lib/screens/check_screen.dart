@@ -52,7 +52,10 @@ class CheckScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'House called on ${Provider.of<GameData>(context).calledNumber}'
+                  'House called on ${Provider.of<GameData>(context).calledNumber}',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                  ),
                 ),
                 RoundedButton(
                   title: 'Return to game',
