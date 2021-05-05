@@ -8,28 +8,30 @@ class BingoBall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      width: 400,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          scale: 400,
-          image: AssetImage(
-            'images/bingo_ball.png',
-          ),
-          fit: BoxFit.fill,
-          alignment: Alignment.center,
-        ),
-      ),
+    return Expanded(
       child: Container(
-        alignment: Alignment.center,
-        child: Text(
-          '$text',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 120,
-            color: Color(0xFF174520),
+        //height: 200,
+        // width: 400,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            scale: 400,
+            image: AssetImage(
+              'images/bingo_ball.png',
+            ),
+            fit: BoxFit.contain,
+            alignment: Alignment.center,
+          ),
+        ),
+        child: Container(
+          alignment: Alignment.center,
+          child: Text(
+            '$text',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 80,
+              color: Color(0xFF174520),
+            ),
           ),
         ),
       ),
