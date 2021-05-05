@@ -23,9 +23,9 @@ class CheckScreen extends StatelessWidget {
                   child: GridView.count(
                     crossAxisCount: 10,
                     crossAxisSpacing: 1.0,
-                    mainAxisSpacing: 1.0,
+                    mainAxisSpacing: 0.5,
                     childAspectRatio: 1,
-                    padding: EdgeInsets.all(3),
+                    padding: EdgeInsets.all(8),
                     shrinkWrap: true,
                     children: List.generate(90, (index) {
                       int number = index + 1;
@@ -33,16 +33,26 @@ class CheckScreen extends StatelessWidget {
                       if (calledNumbers.contains(number)) {
                         return Text(
                             '$number',
-                          style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold
+                          )
                         );
                       } else {
                       return Text(
                           '$number',
-                          style: TextStyle(color: Colors.black87)
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.grey
+                          )
                       );
                       }
                     },),
                   ),
+                ),
+                Text(
+                  'House called on ${Provider.of<GameData>(context).calledNumber}'
                 ),
                 RoundedButton(
                   title: 'Return to game',
