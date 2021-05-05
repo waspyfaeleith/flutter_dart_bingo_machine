@@ -4,7 +4,6 @@ import 'package:my_fun_app/screens/check_screen.dart';
 import 'package:my_fun_app/screens/game_screen.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(BingoMachine());
 }
