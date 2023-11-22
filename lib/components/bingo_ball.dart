@@ -4,7 +4,7 @@ class BingoBall extends StatelessWidget {
 
   final String text;
 
-  BingoBall( { @required this.text });
+  BingoBall( { required this.text });
 
   @override
   Widget build(BuildContext context) {
